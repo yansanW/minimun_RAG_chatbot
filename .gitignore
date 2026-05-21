@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.DS_Store
+*.log
+src/content/
+doc/
+app_openai.py
