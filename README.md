@@ -1,5 +1,5 @@
 # RAG Chatbot
-<img width="1400" height="662" alt="image" src="https://github.com/user-attachments/assets/d7f94a93-a81d-47fd-9a56-b3dd687d48b2" />
+![alt text](image.png)
 
 
 # What is RAG?
