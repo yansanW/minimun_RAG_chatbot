@@ -6,19 +6,24 @@
 it stops an LLM from making things up by forcing it to read your documents before answering.
 ```
 
-## Example’s how chatbot looks like: 
+## Example’s how chatbot looks like:
+```
 You build a chatbot using ChatGPT or Claude. 
                     |
                     ▼ 
 A user asks “what’s your return policy?” 
                     |
                     ▼ 
-But the LLM (like ChatGPT or Claude) doesn’t know your return policy — it was trained on the internet, not your business docs.
+But the LLM (like ChatGPT or Claude) doesn’t know your return policy
+— it was trained on the internet, not your business docs.
                     |
                     ▼ 
-So it either says “I don’t know” or worse, it confidently makes something up (this is called hallucination, and it’s a real problem).
-```
-RAG fixes this by saying: before the LLM answers, go find the relevant part of the document first, then answer based on that.
+So it either says “I don’t know” or worse, it confidently makes something up
+(this is called hallucination, and it’s a real problem).
+                    |
+                    ▼ 
+RAG fixes this by saying: before the LLM answers,
+go find the relevant part of the document first, then answer based on that.
 ```
 
 ## Here’s how RAG chatbot actually works under the hood. 
