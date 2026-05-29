@@ -11,3 +11,4 @@ src/content/
 doc/
 app_openai.py
 README_meONLY.md
+src/app_llama.py
