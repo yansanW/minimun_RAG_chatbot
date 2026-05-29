@@ -5,6 +5,7 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_experimental.text_splitter import SemanticChunker
 
 
 # New imports for the modern chain
@@ -62,9 +63,16 @@ if uploaded_file and api_key :
         loader = PyPDFLoader(tmp_path)
         pages = loader.load()
 
-        # Chunk it
+        # Static Chunking (not recommended for best results, but shows the old way)
         splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
         chunks = splitter.split_documents(pages)
+
+        # Dynamic & Semantic Chunking Strategies
+        splitter = SemanticChunker(
+            embeddings=SafeGoogleEmbeddings(model="models/gemini-embedding-001", google_api_key=api_key),
+            breakpoint_threshold_type="percentile",
+            breakpoint_threshold_amount=95,  # CORRECT: Controls chunk size when using "percentile" type
+        )
 
         # Embed + store
         if debug:
