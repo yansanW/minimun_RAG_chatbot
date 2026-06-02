@@ -63,9 +63,6 @@ user question → embed → vector search → LLM → answer
                                                                [ Exact Search ]                         
                                                                       │                                 
                                                                       ▼                                
-                                                               [ Return Top-K ]                        
-                                                                      │                                
-                                                                      ▼                                
                                                                [ Return Top-K Chunks ]
                                                                       │                                
                                                                       │ (Passes selected chunks to LLM)
@@ -111,9 +108,6 @@ user question   → [query rewriting] → vector search
                                       └──────────────────────────────┘                      ▼                                 
                                                                                        [ Reranker ]                         
                                                                                             │                                 
-                                                                                            ▼                                
-                                                                                     [ Return Top-K ]                        
-                                                                                            │                                
                                                                                             ▼                                
                                                                                      [ Return Top-K Chunks ]   
                                                                                             │                                
